@@ -1,0 +1,29 @@
+{
+   "name": "aula01",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "type": "module",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "express": "^4.18.2",
+      "sequelize": "^6.29.1",
+      "sqlite3": "^5.1.4",
+      "typeorm": "0.3.10",
+      "reflect-metadata": "^0.1.13",
+      "pg": "^8.4.0"
+   },
+   "devDependencies": {
+      "nodemon": "^2.0.21",
+      "ts-node": "10.7.0",
+      "@types/node": "^16.11.10",
+      "typescript": "4.5.2"
+   }
+}
