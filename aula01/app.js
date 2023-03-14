@@ -1,6 +1,7 @@
 import express from 'express';
+import cors from 'cors';
 import { sequelize } from './databases/connect.js';
-import { Product } from './models/product.js';
+import { Product } from './models/Product.js';
 import { Client } from './models/Client.js';
 import routes from './routes.js';
 
@@ -9,6 +10,7 @@ const port = 3000;
 
 app.use(express.json());
 app.use(routes);
+app.use(cors());
 
 async function connect_db() {
   try {
@@ -16,7 +18,7 @@ async function connect_db() {
     console.log('Connection has been established successfully');
 
     await Product.sync({ alter: true });
-    await Client.sync({alter: true});
+    // await Client.sync({alter: true});
     console.log("All models were synchronised successfully");
 
   } catch (error) {

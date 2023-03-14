@@ -42,6 +42,4 @@ export const clientUpdate = async (req, res) => {
   } catch (error) {
     res.status(400).json(error)
   }
-
-
 };

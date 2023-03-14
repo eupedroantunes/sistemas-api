@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/products', productIndex)
   .get('/products/:id', productSearch)
-  .get('/products/stocks/total', stockStats)
+  .get('/products/stock/total', stockStats)
   .post('/products', productStore)
   .put('/products/:id', productUpdate)
   .delete('/products/:id', productDelete)
