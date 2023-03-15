@@ -6,7 +6,7 @@ import { Client } from './models/Client.js';
 import routes from './routes.js';
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(express.json());
 app.use(routes);
@@ -18,7 +18,7 @@ async function connect_db() {
     console.log('Connection has been established successfully');
 
     await Product.sync({ alter: true });
-    // await Client.sync({alter: true});
+    await Client.sync({force: true});
     console.log("All models were synchronised successfully");
 
   } catch (error) {

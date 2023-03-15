@@ -1,8 +1,12 @@
 import Router from 'express'
+import cors from 'cors'
 import { clientIndex, clientStore, clientUpdate } from './controllers/ClientController.js'
 import { productDelete, productIndex, productSearch, productStore, productUpdate, stockStats } from './controllers/ProductController.js'
 
 const router = Router()
+
+// router.use(json())
+router.use(cors())
 
 router.get('/products', productIndex)
   .get('/products/:id', productSearch)

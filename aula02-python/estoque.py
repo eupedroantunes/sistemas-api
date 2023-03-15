@@ -2,10 +2,6 @@ import requests
 import json
 
 api_url = "http://localhost:3001/products"
-# response = requests.get(api_url)
-# data = response.json()
-
-# print(data)
 
 def incluir():
   print(f"\nInclusão de Produtos")
@@ -21,9 +17,8 @@ def incluir():
     "quantityStock": quantity,
     "price": price
   }
-
-  
-  response = requests.post(api_url, json=newProduct)
+  headers = {"Content-type": "application/json"}
+  response = requests.post(api_url, data=json.dumps(newProduct), headers=headers)
   response.json()
   if response.status_code == 201:
     print("="*30)
@@ -32,7 +27,10 @@ def incluir():
     
 
 def listar():
-  pass
+  print(f"\nListagem de Produtos")
+  print("-"*40)
+  response = requests.get(api_url)
+  print(response.json())
 
 def alterar():
   pass
