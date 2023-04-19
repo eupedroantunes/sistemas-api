@@ -66,10 +66,35 @@ def alterar():
 
 
 def excluir():
-  pass
+  response = requests.get(api_url)
+  data = response.json()
+
+  listar()
+  id = int(input(f'Escolha o ID do Produto que você deseja excluir: '))
+  count = 0
+
+  for key in data:
+    if key["id"] == id:
+      response = requests.delete(f"{api_url}/{id}")
+      count += 1
+      if response.status_code == 200:
+          print("="*30)
+          print("Produto deletado com sucesso!")
+          print("="*30)
+    
+  if count == 0:
+    print("Produto não encontrado!")
+
 
 def consultar():
-  pass
+  response = requests.get(api_url)
+  data = response.json()
+
+  searchByDescription = input("Digite o nome do produto que você deseja procurar: ")
+
+  for key in data:
+    if key["description"] == searchByDescription:
+      print(key)
 
 def estatisticas():
   pass
