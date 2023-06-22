@@ -1,2 +1,3 @@
 # Ignorados pelo git
 /node_modules
+/.env
