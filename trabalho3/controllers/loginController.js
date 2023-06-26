@@ -36,8 +36,14 @@ export const loginUsuario = async (req, res) => {
         process.env.JWT_KEY,
         { expiresIn: "1h" }
       )
+      
+      await Usuario.update({lastLogin: new Date()}, {
+        where: {
+          email
+        }
+      })
 
-      res.status(200).json({msg: "Ok. Logado", token})
+      res.status(200).json({msg: "Ok, usuário logado", token})
     } else {
 
       // registra um log desta tentativa de acesso

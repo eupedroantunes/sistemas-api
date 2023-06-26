@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 
-import { Usuario } from '../models/Usuario.js'
+import { Usuario } from '../models/Usuario.js';
 import { validaSenha } from '../util/Util.js';
 // import { Log } from "../models/Log.js";
 

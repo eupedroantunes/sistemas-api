@@ -26,7 +26,7 @@ export const Usuario = sequelize.define('usuario', {
     allowNull: true
   },
   token: {
-    type: DataTypes.NUMBER(4),
+    type: DataTypes.INTEGER(4),
     allowNull: true
   }
 });
