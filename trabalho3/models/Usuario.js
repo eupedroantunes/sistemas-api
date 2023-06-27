@@ -28,6 +28,10 @@ export const Usuario = sequelize.define('usuario', {
   token: {
     type: DataTypes.INTEGER(4),
     allowNull: true
+  },
+  role: {
+    type: DataTypes.STRING(20),
+    defaultValue: "ADMIN"
   }
 });
 
