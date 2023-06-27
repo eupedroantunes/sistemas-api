@@ -5,6 +5,7 @@ import routes from "./routes.js";
 import { sequelize } from "./databases/connect.js";
 import { Usuario } from "./models/Usuario.js";
 import { Log } from "./models/Log.js";
+import { Venda } from "./models/Venda.js";
 
 const app = express();
 const port = 3000;
@@ -20,6 +21,7 @@ async function connect_db() {
 
     await Usuario.sync();
     await Log.sync();
+    await Venda.sync();
   } catch (error) {
     console.error("Erro na conexão com o banco: ", error);
   }
